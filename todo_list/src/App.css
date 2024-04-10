@@ -78,3 +78,30 @@ h1 {
     margin-left: 15px;
   }
 
+/* Estilos para tema claro */
+.light {
+  background-color: rgb(248, 191, 191);
+  color: #000;
+}
+
+.light button,
+.light button:hover,
+.light button:active,
+.light button:focus {
+  background-color: rgb(161, 29, 97);
+  color: #fff;
+}
+
+/* Estilos para tema oscuro */
+.dark {
+  background-color: #333;
+  color: #fff;
+}
+
+.dark button,
+.dark button:hover,
+.dark button:active,
+.dark button:focus {
+  background-color: #fff;
+  color: #333;
+}

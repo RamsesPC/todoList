@@ -2,8 +2,9 @@ import React, {useState,useEffect} from "react";
 import "./App.css";
 
 const App = () => {
-    const [todos, setTodos] = React.useState([]);
 
+    const [todos, setTodos] = React.useState([]);
+    const [theme, setTheme] = useState("light"); // Estado para controlar el tema
     const [todoEditing, setTodoEditing] = React.useState(null);
 
     useEffect(() => {
@@ -107,8 +108,12 @@ useEffect(() => {
       setTodoEditing(null);
     }
 
+    const toggleTheme = () => {
+      setTheme(theme === "light" ? "dark" : "light");
+    };
+
     return (
-        <div id="todo-list">
+    <div id="todo-list" className={theme}>
           <h1>Todo List</h1>
           <form onSubmit={handleSubmit}>
             <input
@@ -150,9 +155,12 @@ useEffect(() => {
 
               <button onClick={() => deleteTodo(todo.id)}>Delete</button>
              </div>
+
           </div>
         ))}
+          <button onClick={toggleTheme} className="theme-toggle"> Cambiar tema </button>
         </div>
+          
       );
     };
 
